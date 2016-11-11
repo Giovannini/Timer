@@ -1,0 +1,7 @@
+typings/main
+typings/main.d.ts
+node_modules
+npm-debug.log
+dist/
+dist/*
+yarn.lock
