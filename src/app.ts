@@ -1,5 +1,3 @@
-/// <reference path="./_all.d.ts" />
-
 import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
@@ -15,6 +13,7 @@ class Server {
 		const index = new indexRoute.Index();
 
 		router.get('/', index.index.bind(index.index));
+		router.get('/data', index.data.bind(index.data));
 
 		this.app.use(router);
 	}
