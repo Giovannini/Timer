@@ -1,4 +1,4 @@
-#task-list ul li.task p.task-button {
+#tasks-list li.task p.task-button {
   flex: 0 0 50px;
   background-color: #437C75;
   padding: 10px;

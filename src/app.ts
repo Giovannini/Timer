@@ -10,15 +10,17 @@ class Server {
 	private config() {
 		this.app.use(express.static('public'));
 		this.app.use(bodyParser.json());       // to support JSON-encoded bodies
-		this.app.use(bodyParser.urlencoded()); // to support URL-encoded bodies
+		this.app.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded bodies
 	}
 
 	private routes() {
 		const router: express.Router = express.Router();
 
 		router.get('/', indexRoute.index);
-		router.put('/newTask', taskApi.newTask);
 		router.get('/data', indexRoute.data);
+		router.get('/tasks', taskApi.retrieveTasks);
+
+		router.put('/newTask', taskApi.newTask);
 
 		this.app.use(router);
 	}

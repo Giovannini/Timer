@@ -13,37 +13,15 @@
 
 <body>
   <header>
-    <h1>Timer</h1>
+    <h1 id="title">Timer</h1>
     <h2>Track your time</h2>
   </header>
 
-  <div id="task-list">
-    <ul>
-      <li class="task">
-        <div class="task-info">
-          <p class="task-name">Développement</p>
-          <p class="task-time">0s</p>
-        </div>
-        <p class="task-button">Start</p>
-      </li>
-      <li class="task">
-        <div class="task-info">
-          <p class="task-name">Veille</p>
-          <p class="task-time">0s</p>
-        </div>
-        <p class="task-button">Start</p>
-      </li>
-      <li class="task">
-        <div class="task-info">
-          <p class="task-name">Gestion projet</p>
-          <p class="task-time">0s</p>
-        </div>
-        <p class="task-button">Start</p>
-      </li>
-      <li class="new-task">
-        <input id="add-new-task" type="text" placeholder="New task..."/>
-      </li>
-    </ul>
+  <div id="tasks">
+    <ul id="tasks-list"><li id="new-task" class="new-task">
+      <input id="add-new-task" type="text" placeholder="New task..."/>
+    </li></ul>
   </div>
 </body>
+<script type="text/javascript" src="javascript/client/index.js"></script>
 </html>

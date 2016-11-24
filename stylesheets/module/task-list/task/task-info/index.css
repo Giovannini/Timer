@@ -1,7 +1,7 @@
 @import 'task-name.css';
 @import 'task-time.css';
 
-#task-list ul li.task div.task-info {
+#tasks-list li.task div.task-info {
   width: 100%;
   display: flex;
   flex-direction: row;

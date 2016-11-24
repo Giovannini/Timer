@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
+        "outDir": "./public/javascript",
         "sourceMap": true,
         "noImplicitAny": true,
         "strictNullChecks": true,
@@ -13,6 +13,7 @@
     ],
     "files": [
       "./src/app.ts",
+      "./src/client/index.ts",
       "./typings/browser.d.ts"
     ]
 }

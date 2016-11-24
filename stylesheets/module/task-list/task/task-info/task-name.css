@@ -1,7 +1,7 @@
-#task-list ul li.task div p.task-name {
+#tasks-list li.task div p.task-name {
   flex-grow: 5;
 }
 
-#task-list ul li.task:hover div p.task-name {
+#tasks-list li.task:hover div p.task-name {
   color: #437C75;
 }

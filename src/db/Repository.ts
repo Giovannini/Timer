@@ -8,12 +8,14 @@ const url: string = 'mongodb://localhost:27017/timer';
 // Get the documents collection
 const collection = (db: Db) => db.collection('test');
 
-export const findDocuments = (callback: (error: MongoError, result: any[]) => void) =>
+export const findDocuments = (callback: (error: MongoError, result: any[]) => void) => {
+	console.log('findDocuments');
 	wrapCall((collection: Collection) =>
 		collection
 			.find({})
 			.toArray((error: MongoError, result: any[]) => callback(error, result))
 	);
+};
 
 export const insertDocument = (
 	document: {},

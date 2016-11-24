@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run watch-css & npm run build",
-    "build": "npm run static && node ./bin/www",
+    "build": "nodemon ./bin/www",
     "watch-css": "watch 'npm run static' stylesheets/",
-    "static": "rimraf public/stylesheets/ && ncp stylesheets public/stylesheets/"
+    "static": "rimraf public/stylesheets/* && ncp stylesheets public/stylesheets/"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "devloop": "^0.1.7",
     "ncp": "^2.0.0",
     "node-inspector": "^0.12.8",
+    "nodemon": "^1.11.0",
     "recursive-copy": "^2.0.5",
     "rimraf": "^2.5.4",
     "watch": "latest"
