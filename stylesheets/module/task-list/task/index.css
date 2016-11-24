@@ -1,0 +1,16 @@
+@import 'task-button.css';
+@import 'task-info/index.css';
+
+#task-list ul li.task {
+  margin: 5px;
+  background-color: #D1CFC5;
+  border-bottom: 2px solid #C0BEB4;
+  border-radius: 2px;
+
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+  font-size: 30px;
+}

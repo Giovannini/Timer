@@ -6,7 +6,9 @@ import * as indexRoute from './routes/index';
 class Server {
 	public app: express.Application;
 
-	private config() { }
+	private config() {
+		this.app.use(express.static('public'));
+	}
 
 	private routes() {
 		const router: express.Router = express.Router();
