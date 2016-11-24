@@ -5,15 +5,13 @@ import * as path from 'path';
 import { Db, MongoClient, MongoError } from 'mongodb';
 import * as assert from 'assert';
 import * as Repository from '../db/Repository';
+import * as apiResponses from '../api/responses';
 
-export const index = (
+export const newTask = (
 	req: express.Request,
 	res: express.Response,
 	next: express.NextFunction
-) => res.sendFile(path.join(`${__dirname}/../../index.html`));
-
-export const data = (
-	req: express.Request,
-	res: express.Response,
-	next: express.NextFunction
-) => Repository.findDocuments((error, result) => res.json(result));
+) => Repository.insertDocument(req.body, (error, result) => {
+	if (error === null) return res.json(apiResponses.created(result));
+	return res.json(apiResponses.internalServerError(error));
+});

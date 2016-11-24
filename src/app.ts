@@ -2,20 +2,23 @@ import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as path from 'path';
 import * as indexRoute from './routes/index';
+import * as taskApi from './routes/taskApi';
 
 class Server {
 	public app: express.Application;
 
 	private config() {
 		this.app.use(express.static('public'));
+		this.app.use(bodyParser.json());       // to support JSON-encoded bodies
+		this.app.use(bodyParser.urlencoded()); // to support URL-encoded bodies
 	}
 
 	private routes() {
 		const router: express.Router = express.Router();
-		const index = new indexRoute.Index();
 
-		router.get('/', index.index.bind(index.index));
-		router.get('/data', index.data.bind(index.data));
+		router.get('/', indexRoute.index);
+		router.put('/newTask', taskApi.newTask);
+		router.get('/data', indexRoute.data);
 
 		this.app.use(router);
 	}

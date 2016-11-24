@@ -1,0 +1,25 @@
+#task-list ul li.new-task {
+  margin: 5px;
+  background-color: #D1CFC5;
+  border-bottom: 2px solid #C0BEB4;
+  border-radius: 2px;
+
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+  font-size: 30px;
+}
+
+#task-list ul li.new-task input {
+  background-color: inherit;
+  border: none;
+}
+
+#task-list ul li.new-task input:focus {
+  outline: none;
+  border-bottom: 2px solid #30353A;
+  padding-bottom: 5px;
+  transition: 0.3s all ease-in-out;
+}

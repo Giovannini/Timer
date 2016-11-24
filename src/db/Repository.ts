@@ -1,27 +1,29 @@
-import { Db, MongoCallback, MongoClient, MongoError } from 'mongodb';
+import { Db, MongoCallback, MongoClient, MongoError, Collection } from 'mongodb';
 import * as assert from 'assert';
+import * as apiResponses from '../api/responses';
 
 // Connection URL
-const url: string = 'mongodb://localhost:27017/mntn';
+const url: string = 'mongodb://localhost:27017/timer';
 
 // Get the documents collection
 const collection = (db: Db) => db.collection('test');
 
 export const findDocuments = (callback: (error: MongoError, result: any[]) => void) =>
-	wrapCall((error: MongoError, db: Db) =>
-		collection(db)
+	wrapCall((collection: Collection) =>
+		collection
 			.find({})
-			.toArray((error: MongoError, result: any[]) => {
-				assert.equal(error, null);
-				callback(error, result);
-			})
+			.toArray((error: MongoError, result: any[]) => callback(error, result))
 	);
 
-const wrapCall = (callback: (error: MongoError, db: Db) => void) => {
-	return MongoClient.connect(url, (error: MongoError, db: Db) => {
-		assert.equal(null, error);
-		const result = callback(error, db);
+export const insertDocument = (
+	document: {},
+	callback: (error: MongoError, result: any[]) => void
+) => wrapCall((collection: Collection) => collection.insertOne(document, callback));
+
+const wrapCall = (callback: (collection: Collection) => void) =>
+	MongoClient.connect(url, (error: MongoError, db: Db) => {
+		if (error !== null) return apiResponses.internalServerError(error);
+		const result = callback(collection(db));
 		db.close();
 		return result;
-	})
-}
+	});
