@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Giovannini/MNTN.git"
+    "url": "git+https://github.com/Giovannini/Timer.git"
   },
   "keywords": [
-    "maintenon"
+    "timer"
   ],
   "author": "Thomas GIOVANNINI",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Giovannini/MNTN/issues"
+    "url": "https://github.com/Giovannini/Timer/issues"
   },
-  "homepage": "https://github.com/Giovannini/MNTN#readme",
+  "homepage": "https://github.com/Giovannini/Timer#readme",
   "dependencies": {
     "@types/react": "^0.14.47",
     "@types/react-dom": "^0.14.18",
