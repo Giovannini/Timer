@@ -18,3 +18,8 @@ export const addNewTask = (e: Event) => {
 		}
 	}
 };
+
+export const focusNewTaskInput = (event: Event) => {
+	event.preventDefault();
+	NewTaskInput.focus()
+}
