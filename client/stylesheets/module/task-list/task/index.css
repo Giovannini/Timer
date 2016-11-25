@@ -1,20 +1,20 @@
 @import 'task-button.css';
+@import 'task-delete-button.css';
 @import 'task-info/index.css';
 
 #tasks ul li.task {
-  margin: 5px;
+  margin: 15px;
   background-color: #D1CFC5;
   border-bottom: 2px solid #C0BEB4;
   border-radius: 2px;
   opacity: 0.95;
 
-  width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: row;
 
   font-size: 30px;
-  position: relative
+  position: relative;
 }
 
 #tasks ul li.task:hover {

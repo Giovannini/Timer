@@ -8,9 +8,7 @@
         "target": "es5",
         "jsx": "react"
     },
-    "exclude": [
-      "node_modules"
-    ],
+    "exclude": [ "node_modules" ],
     "files": [
       "./server/app.ts",
       "./typings/browser.d.ts"

@@ -13,6 +13,15 @@ export const newTask = (
 	return res.status(500).json(error);
 });
 
+export const deleteTask = (
+	req: express.Request,
+	res: express.Response,
+	next: express.NextFunction
+) => Repository.removeDocument(req.body, (error, result) => {
+	if (error === null) return res.status(200).json(result);
+	return res.status(500).json(error);
+});
+
 export const retrieveTasks = (
 	req: express.Request,
 	res: express.Response,

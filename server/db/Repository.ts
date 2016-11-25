@@ -1,4 +1,4 @@
-import { Db, MongoCallback, MongoClient, MongoError, Collection } from 'mongodb';
+import { Db, MongoCallback, MongoClient, MongoError, Collection, ObjectID } from 'mongodb';
 import * as assert from 'assert';
 
 // Connection URL
@@ -21,6 +21,15 @@ export const insertDocument = (
 ) => wrapCall((error: MongoError, collection: Collection) => {
 	if (error !== null) return callback(error, []);
 	return collection.insertOne(document, callback)
+});
+
+export const removeDocument = (
+	document: { _id: string },
+	callback: (error: MongoError, result: any[]) => void
+) => wrapCall((error: MongoError, collection: Collection) => {
+	const filter = { _id: new ObjectID(document._id) }
+	if (error !== null) return callback(error, []);
+	return collection.deleteOne(filter, callback);
 });
 
 const wrapCall = (callback: (error: MongoError, collection: Collection) => void) =>

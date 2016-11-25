@@ -1,9 +1,9 @@
 #tasks-list li.task p.task-button.start {
   flex: 0 0 60px;
-  background-color: #437C75;
+  background-color: #618E87;
   padding: 10px;
 
-  border-bottom: 4px solid #326B64;
+  border-bottom: 4px solid #507D76;
   border-radius: 2px;
 
   -webkit-touch-callout: none; /* iOS Safari */
@@ -17,10 +17,10 @@
 
 #tasks-list li.task p.task-button.stop {
   flex: 0 0 50px;
-  background-color: #BC838A;
+  background-color: #437C75;
   padding: 10px;
 
-  border-bottom: 0px solid #326B64;
+  border-bottom: 0px;
   margin-top: 4px;
   border-radius: 2px;
 }

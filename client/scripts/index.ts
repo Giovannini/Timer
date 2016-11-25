@@ -1,9 +1,9 @@
-import { updateTaskList } from './tasks/tasksList';
-import { socket } from './socket';
+import { updateTaskList } from './tasks/commands';
+import * as newTask from './tasks/newTask/commands';
+import { NewTaskInput } from './tasks/newTask/NewTaskInput';
+
 
 document.addEventListener('DOMContentLoaded', updateTaskList, false);
 setInterval(updateTaskList, 20000);
 
-socket.on('connect', function() {
-	console.log('Connected!');
-});
+NewTaskInput.onkeypress = newTask.addNewTask;

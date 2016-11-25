@@ -1,6 +1,5 @@
-import * as bodyParser from 'body-parser';
 import * as express from 'express';
-import * as path from 'path';
+import * as bodyParser from 'body-parser';
 import * as indexRoute from './routes/index';
 import * as taskApi from './routes/taskApi';
 
@@ -9,8 +8,8 @@ class Server {
 
 	private config() {
 		this.app.use(express.static('public'));
-		this.app.use(bodyParser.json()); // to support JSON-encoded bodies
 		this.app.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded bodies
+		this.app.use(bodyParser.json()); // to support JSON-encoded bodies
 	}
 
 	private routes() {
@@ -20,7 +19,8 @@ class Server {
 		router.get('/data', indexRoute.data);
 		router.get('/tasks', taskApi.retrieveTasks);
 
-		router.put('/newTask', taskApi.newTask);
+		router.put('/task', taskApi.newTask);
+		router.delete('/task', taskApi.deleteTask);
 
 		this.app.use(router);
 	}
@@ -32,7 +32,9 @@ class Server {
 	constructor() {
 		this.app = express();
 
+		console.log(this.app);
 		this.config();
+		console.log(this.app);
 		this.routes();
 	}
 }

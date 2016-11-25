@@ -1,6 +1,10 @@
-import { socket } from '../socket';
 const start = "Start";
 const stop = "Stop";
+
+const updateTime = (time: HTMLElement) => {
+	timeValue += 1;
+	time.textContent = timeValue + "s";
+}
 
 let scheduler: number;
 let timeValue = 0;
@@ -19,9 +23,4 @@ export function toggleTimer(button: HTMLElement, time: HTMLElement, taskName: st
 		scheduler = setInterval(updateTime.bind(null, time), 1000);
 		button.className = "task-button stop";
 	}
-}
-
-const updateTime = (time: HTMLElement) => {
-	timeValue += 1;
-	time.textContent = timeValue + "s";
 }
