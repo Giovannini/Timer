@@ -10,7 +10,7 @@ export const index = (
 	req: express.Request,
 	res: express.Response,
 	next: express.NextFunction
-) => res.sendFile(path.join(`${__dirname}/../../../index.html`));
+) => res.sendFile(path.join(`${__dirname}/../../index.html`));
 
 export const data = (
 	req: express.Request,

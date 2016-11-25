@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch-css & npm run build",
-    "build": "nodemon ./bin/www",
-    "watch-css": "watch 'npm run static' stylesheets/",
-    "static": "rimraf public/stylesheets/* && ncp stylesheets public/stylesheets/"
+    "loop": "node node_modules/devloop/bin/main.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +21,7 @@
   "homepage": "https://github.com/Giovannini/Timer#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "devloop": "^0.1.7",
     "express": "^4.14.0",
     "mongodb": "^2.2.11",
     "node-inspector": "^0.12.8",
@@ -36,6 +34,7 @@
     "node": "~6.2"
   },
   "devDependencies": {
+    "concurrently": "^3.1.0",
     "devloop": "^0.1.7",
     "ncp": "^2.0.0",
     "node-inspector": "^0.12.8",

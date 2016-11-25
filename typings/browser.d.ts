@@ -6,5 +6,5 @@
 /// <reference path="browser/ambient/mongodb/index.d.ts" />
 /// <reference path="browser/ambient/node/index.d.ts" />
 /// <reference path="browser/ambient/serve-static/index.d.ts" />
+/// <reference path="browser/ambient/socket.io-client/index.d.ts" />
 /// <reference path="browser/ambient/whatwg-fetch/index.d.ts" />
-/// <reference path="browser/ambient/body-parser/index.d.ts" />

@@ -9,7 +9,7 @@ class Server {
 
 	private config() {
 		this.app.use(express.static('public'));
-		this.app.use(bodyParser.json());       // to support JSON-encoded bodies
+		this.app.use(bodyParser.json()); // to support JSON-encoded bodies
 		this.app.use(bodyParser.urlencoded({ extended: true })); // to support URL-encoded bodies
 	}
 

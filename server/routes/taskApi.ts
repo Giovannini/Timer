@@ -3,7 +3,6 @@ import * as path from 'path';
 import { Db, MongoClient, MongoError } from 'mongodb';
 import * as assert from 'assert';
 import * as Repository from '../db/Repository';
-import * as apiResponses from '../api/responses';
 
 export const newTask = (
 	req: express.Request,

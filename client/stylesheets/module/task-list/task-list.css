@@ -1,0 +1,10 @@
+#tasks {
+  max-width: 900px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: white;
+  opacity: 0.95;
+  flex: 5 0 auto;
+}

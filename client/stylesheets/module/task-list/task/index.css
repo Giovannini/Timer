@@ -6,6 +6,7 @@
   background-color: #D1CFC5;
   border-bottom: 2px solid #C0BEB4;
   border-radius: 2px;
+  opacity: 0.95;
 
   width: 100%;
   padding: 20px;
@@ -13,4 +14,11 @@
   flex-direction: row;
 
   font-size: 30px;
+  position: relative
+}
+
+#tasks ul li.task:hover {
+  box-shadow: 0 14px 14px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  z-index: 10;
+  transition: 0.3s all;
 }

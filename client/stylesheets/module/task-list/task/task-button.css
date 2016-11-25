@@ -1,0 +1,26 @@
+#tasks-list li.task p.task-button.start {
+  flex: 0 0 60px;
+  background-color: #437C75;
+  padding: 10px;
+
+  border-bottom: 4px solid #326B64;
+  border-radius: 2px;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#tasks-list li.task p.task-button.stop {
+  flex: 0 0 50px;
+  background-color: #BC838A;
+  padding: 10px;
+
+  border-bottom: 0px solid #326B64;
+  margin-top: 4px;
+  border-radius: 2px;
+}

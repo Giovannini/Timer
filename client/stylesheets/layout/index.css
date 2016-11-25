@@ -1,6 +1,6 @@
 @import 'header.css';
 
 body {
-  background-color: white;
+  background-image: url('../../images/bg.svg');
   color: #23272A;
 }
