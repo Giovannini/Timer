@@ -1,5 +1,7 @@
 const start = "Start";
 const stop = "Stop";
+const startClassName = "task-button start";
+const stopClassName = "task-button stop";
 
 const updateTime = (time: HTMLElement) => {
 	timeValue += 1;
@@ -14,13 +16,28 @@ export function toggleTimer(button: HTMLElement, time: HTMLElement, taskName: st
 
 	if (isTimerStarted) {
 		button.textContent = start;
-		button.className = "task-button start";
+		button.className = startClassName;
 		clearInterval(scheduler);
 		timeValue = 0;
 		time.textContent = "0s";
 	} else {
+		stopAllOtherTimers();
 		button.textContent = stop;
 		scheduler = setInterval(updateTime.bind(null, time), 1000);
-		button.className = "task-button stop";
+		button.className = stopClassName;
 	}
+}
+
+const stopAllOtherTimers = () => {
+	const startedButtons = document.getElementsByClassName(stopClassName);
+	Array.prototype.map.call(startedButtons, button => {
+		button.textContent = start;
+		button.className = startClassName;
+	});
+	clearInterval(scheduler);
+	timeValue = 0;
+	const startedTimers = document.getElementsByClassName("task-time");
+	Array.prototype.map.call(startedTimers, p => {
+		p.textContent = "0s";
+	});
 }
